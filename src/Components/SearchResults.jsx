@@ -7,7 +7,7 @@ const SearchResults = ({ results }) => {
   }
 
   return (
-    <ul className="mt-8 flex flex-col items-center justify-center">
+    <ul className="mt-8 flex flex-col items-center justify-center font-sans">
       {results.map((result) => (
         <li key={result.objectID}>
           <a
