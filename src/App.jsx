@@ -12,8 +12,6 @@ const App = () => {
     setLoading(true);
     setError(null);
 
-
-  
     fetch(`https://hn.algolia.com/api/v1/search?query=${searchTerm}`)
       .then((response) => response.json())
       .then((data) => {
@@ -29,14 +27,14 @@ const App = () => {
 
   return (
     <div className="mx-auto mt-8 flex max-w-md flex-col items-center">
-      <h1 className="mb-8 font-sans text-3xl font-bold text-gray-100 sm:pt-8 ">
+      <h1 className="mb-8 font-sans text-3xl font-bold text-slate-100 sm:pt-8 ">
         Hacker News Search
       </h1>
       <Search onSearch={handleSearch} />
       {loading ? (
         <Spinner />
       ) : error ? (
-        <p className="mt-4 rounded bg-red-100 px-4 py-2 text-red-500">
+        <p className="mt-4 rounded-md bg-red-100 px-4 py-2 text-red-500">
           {error}
         </p>
       ) : (
