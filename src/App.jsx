@@ -11,8 +11,9 @@ const App = () => {
   const handleSearch = (searchTerm) => {
     setLoading(true);
     setError(null);
-   
 
+
+  
     fetch(`https://hn.algolia.com/api/v1/search?query=${searchTerm}`)
       .then((response) => response.json())
       .then((data) => {
