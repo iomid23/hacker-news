@@ -12,7 +12,12 @@ const App = () => {
     setLoading(true);
     setError(null);
 
-
+    if (searchTerm === "error") {
+      // Simulating an error response
+      setLoading(false);
+      setError("An error occurred. Please try again later.");
+      return;
+    }
   
     fetch(`https://hn.algolia.com/api/v1/search?query=${searchTerm}`)
       .then((response) => response.json())
